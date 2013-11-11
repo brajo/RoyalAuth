@@ -9,6 +9,7 @@ import org.royaldev.royalauth.commands.CmdLogin;
 import org.royaldev.royalauth.commands.CmdLogout;
 import org.royaldev.royalauth.commands.CmdRegister;
 import org.royaldev.royalauth.commands.CmdRoyalAuth;
+import org.royaldev.royalauth.ChatManager;
 
 import java.io.File;
 import java.util.logging.Logger;
@@ -19,6 +20,16 @@ public class RoyalAuth extends JavaPlugin {
 
     public Config c;
     public Logger log;
+    
+   this.chatManager = new ChatManager();
+   
+     private ChatManager chatManager;
+    
+   public ChatManager getChatManager() {
+    return this.chatManager;
+  }
+  
+  
 
     public static File dataFolder;
 
