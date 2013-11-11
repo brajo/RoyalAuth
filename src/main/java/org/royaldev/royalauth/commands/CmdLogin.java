@@ -10,6 +10,9 @@ import org.royaldev.royalauth.Config;
 import org.royaldev.royalauth.Hasher;
 import org.royaldev.royalauth.RUtils;
 import org.royaldev.royalauth.RoyalAuth;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 
 import java.security.NoSuchAlgorithmException;
 
