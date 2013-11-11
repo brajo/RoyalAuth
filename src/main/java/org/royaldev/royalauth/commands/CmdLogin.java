@@ -64,7 +64,7 @@ public class CmdLogin implements CommandExecutor {
                 ap.login();
                 plugin.getLogger().info(p.getName() + " has logged in.");
                 cs.sendMessage(ChatColor.BLUE + "You have been logged in successfully.");
-                Bukkit.dispatchCommand(sender, "mchatenable");
+                Bukkit.dispatchCommand(p.getName(), "mchatenable");
             } else {
                 plugin.getLogger().warning(p.getName() + " tried to log in with an incorrect password!");
                 cs.sendMessage(ChatColor.RED + "That password was incorrect. Please try again.");
