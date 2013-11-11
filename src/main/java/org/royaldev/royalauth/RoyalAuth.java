@@ -21,6 +21,10 @@ public class RoyalAuth extends JavaPlugin {
     public Config c;
     public Logger log;
     
+      public Plugin() {
+    instance = this;
+  }
+    
    this.chatManager = new ChatManager();
    
      private ChatManager chatManager;
