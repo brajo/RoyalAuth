@@ -24,7 +24,6 @@ import org.bukkit.event.player.*;
 import org.bukkit.event.vehicle.VehicleEnterEvent;
 import org.bukkit.event.vehicle.VehicleExitEvent;
 import org.bukkit.scheduler.BukkitTask;
-import org.royaldev.royalauth.ChatManager;
 
 public class AuthListener implements Listener {
 
@@ -47,7 +46,6 @@ public class AuthListener implements Listener {
         if (plugin.getServer().getOnlineMode() && Config.disableIfOnlineMode) return;
         if (!Config.requireLogin) return;
         Player p = e.getPlayer();
-        plugin.getChatManager().disableChat(p);
         AuthPlayer ap = AuthPlayer.getAuthPlayer(p);
         ap.setLastJoinTimestamp(System.currentTimeMillis());
         if (Config.sessionsEnabled && ap.isWithinSession()) {
