@@ -64,7 +64,7 @@ public class RUtils {
                     AuthPlayer ap = AuthPlayer.getAuthPlayer(cs.getName());
                     if (!ap.isLoggedIn() && ap.getLastJoinTimestamp() + (Config.kickAfter * 1000L) <= System.currentTimeMillis()) {
                         Player p = ap.getPlayer();
-                        if (p != null) p.kickPlayer("You took too long to login!");
+                        if (p != null) p.kickPlayer("You took too long to login!\nTo login, type /login [password] in the in game chat.");
                     }
                 }
                 for (String line : message.split("\\n")) cs.sendMessage(colorize(line));
