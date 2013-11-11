@@ -24,6 +24,9 @@ import org.bukkit.event.player.*;
 import org.bukkit.event.vehicle.VehicleEnterEvent;
 import org.bukkit.event.vehicle.VehicleExitEvent;
 import org.bukkit.scheduler.BukkitTask;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 
 public class AuthListener implements Listener {
 
@@ -45,12 +48,14 @@ public class AuthListener implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         if (plugin.getServer().getOnlineMode() && Config.disableIfOnlineMode) return;
         if (!Config.requireLogin) return;
+        Bukkit.dispatchCommand(sender, "mchatdisable");
         Player p = e.getPlayer();
         AuthPlayer ap = AuthPlayer.getAuthPlayer(p);
         ap.setLastJoinTimestamp(System.currentTimeMillis());
         if (Config.sessionsEnabled && ap.isWithinSession()) {
             plugin.getLogger().info(p.getName() + " was logged in via session.");
             p.sendMessage(ChatColor.BLUE + "You have been logged in via session.");
+            Bukkit.dispatchCommand(sender, "mchatenable");
             ap.enableAfterLoginGodmode();
             ap.setLoggedIn(true);
             return;
