@@ -48,7 +48,7 @@ public class CmdRegister implements CommandExecutor {
             }
             if (ap.setPassword(rawPassword, Config.passwordHashType)) {
                 plugin.getLogger().info(p.getName() + " has registered.");
-                cs.sendMessage(ChatColor.BLUE + "Your password has been set, and you have been registered.");
+                cs.sendMessage(ChatColor.BLUE + "Your password has been set, and you have been registered.\n Ensure that you register an account on our forum at http://brajo.co.uk/forum \nThis can be used in case you forget your password.");
                 BukkitTask reminder = ap.getCurrentReminderTask();
                 if (reminder != null) reminder.cancel();
                 ap.createLoginReminder(plugin);
