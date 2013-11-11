@@ -63,7 +63,7 @@ public class CmdLogin implements CommandExecutor {
                 cs.sendMessage(ChatColor.BLUE + "You have been logged in successfully.");
             } else {
                 plugin.getLogger().warning(p.getName() + " tried to log in with an incorrect password!");
-                cs.sendMessage(ChatColor.RED + "That password was incorrect. Please try again.");
+                cs.sendMessage(ChatColor.RED + "That password was incorrect. Please try again.\n If you are still unable to login, please request a password reset at http://www.brajo.co.uk/reset");
             }
             return true;
         }
