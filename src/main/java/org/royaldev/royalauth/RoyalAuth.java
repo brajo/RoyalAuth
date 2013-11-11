@@ -17,6 +17,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RoyalAuth extends JavaPlugin {
+    
+    private static Plugin instance;
 
     public Config c;
     public Logger log;
