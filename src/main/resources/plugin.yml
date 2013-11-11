@@ -24,7 +24,7 @@ commands:
   changepassword:
     description: Changes a player's password.
     usage: /<command> [oldPassword] [newPassword]
-    aliases: [changepass, passchange]
+    aliases: [changepass, passchange, cp]
 
 permissions:
   rauth.login:
