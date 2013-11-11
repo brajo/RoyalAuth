@@ -74,11 +74,11 @@ public class RUtils {
     }
 
     public static BukkitTask createRegisterReminder(CommandSender cs, Plugin p) {
-        return createReminder(cs, p, ChatColor.RED + "Please register with " + ChatColor.GRAY + "/register [password]" + ChatColor.RED + "!", Config.remindInterval * 20L);
+        return createReminder(cs, p, ChatColor.RED + "Please register by typing " + ChatColor.GRAY + "/register [password]" + ChatColor.RED + "!", Config.remindInterval * 20L);
     }
 
     public static BukkitTask createLoginReminder(CommandSender cs, Plugin p) {
-        return createReminder(cs, p, ChatColor.RED + "Please login with " + ChatColor.GRAY + "/login [password]" + ChatColor.RED + "!", Config.remindInterval * 20L);
+        return createReminder(cs, p, ChatColor.RED + "Please login by typing " + ChatColor.GRAY + "/login [password]" + ChatColor.RED + "!", Config.remindInterval * 20L);
     }
 
     /**
