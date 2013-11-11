@@ -10,6 +10,7 @@ import org.royaldev.royalauth.Config;
 import org.royaldev.royalauth.Hasher;
 import org.royaldev.royalauth.RUtils;
 import org.royaldev.royalauth.RoyalAuth;
+import org.royaldev.royalauth.ChatManager
 
 import java.security.NoSuchAlgorithmException;
 
@@ -61,11 +62,12 @@ public class CmdLogin implements CommandExecutor {
                 ap.login();
                 plugin.getLogger().info(p.getName() + " has logged in.");
                 cs.sendMessage(ChatColor.BLUE + "You have been logged in successfully.");
+                plugin.getChatManager().enableChat((Player)commandSender);
             } else {
                 plugin.getLogger().warning(p.getName() + " tried to log in with an incorrect password!");
                 cs.sendMessage(ChatColor.RED + "That password was incorrect. Please try again.");
-                cs.sendMessage(ChatColor.RED + "If you are still unable to login, please request a password reset at:");
-                cs.sendMessage(ChatColor.RED + "http://www.brajo.co.uk/reset");
+                cs.sendMessage(ChatColor.RED + "If still unable to login, request a password reset at:");
+                cs.sendMessage(ChatColor.RED + "> http://www.brajo.co.uk/reset");
             }
             return true;
         }
