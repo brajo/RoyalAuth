@@ -39,7 +39,7 @@ public class CmdRegister implements CommandExecutor {
             if (ap.isLoggedIn() || ap.isRegistered()) {
                 cs.sendMessage(ChatColor.RED + "You are already registered!");
                 cs.sendMessage(ChatColor.RED + "If you feel someone has registered your account without permission, please type:");
-                cs.sendMessage(ChatColor.GOLD + "/modreq already registered" + Chat.Color.RED + " followed by your email address.");
+                cs.sendMessage(ChatColor.GOLD + "/modreq already registered" + ChatColor.RED + " followed by your email address.");
                 return true;
             }
             String rawPassword = args[0]; // no space support
