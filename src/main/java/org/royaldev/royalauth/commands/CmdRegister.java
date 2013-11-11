@@ -37,7 +37,9 @@ public class CmdRegister implements CommandExecutor {
             Player p = (Player) cs;
             AuthPlayer ap = AuthPlayer.getAuthPlayer(p);
             if (ap.isLoggedIn() || ap.isRegistered()) {
-                cs.sendMessage(ChatColor.RED + "You are already registered! \nIf you feel someone has registered your account without permission, please type /modreq already registered followed by your email address.");
+                cs.sendMessage(ChatColor.RED + "You are already registered!");
+                cs.sendMessage(ChatColor.RED + "If you feel someone has registered your account without permission, please type:");
+                cs.sendMessage(ChatColor.GOLD + "/modreq already registered" + Chat.Color.RED + " followed by your email address.");
                 return true;
             }
             String rawPassword = args[0]; // no space support
@@ -48,7 +50,9 @@ public class CmdRegister implements CommandExecutor {
             }
             if (ap.setPassword(rawPassword, Config.passwordHashType)) {
                 plugin.getLogger().info(p.getName() + " has registered.");
-                cs.sendMessage(ChatColor.BLUE + "Your password has been set, and you have been registered.\n Ensure that you also register an account on our forum at http://brajo.co.uk/forum \nThis can be used in case you forget your password.");
+                cs.sendMessage(ChatColor.BLUE + "Your password has been set, and you have been registered.");
+                cs.sendMessage(ChatColor.BLUE + "Ensure that you also register an account on our forum at http://brajo.co.uk/forum");
+                cs.sendMessage(ChatColor.BLUE + "This can be used in case you forget your password.");
                 BukkitTask reminder = ap.getCurrentReminderTask();
                 if (reminder != null) reminder.cancel();
                 ap.createLoginReminder(plugin);
