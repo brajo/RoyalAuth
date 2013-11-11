@@ -18,24 +18,9 @@ import java.util.regex.Pattern;
 
 public class RoyalAuth extends JavaPlugin {
     
-    private static Plugin instance;
 
     public Config c;
     public Logger log;
-    
-      public Plugin() {
-    instance = this;
-  }
-    
-   this.chatManager = new ChatManager();
-   
-     private ChatManager chatManager;
-    
-   public ChatManager getChatManager() {
-    return this.chatManager;
-  }
-  
-  
 
     public static File dataFolder;
 
