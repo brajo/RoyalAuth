@@ -50,13 +50,13 @@ public class AuthListener implements Listener {
         if (plugin.getServer().getOnlineMode() && Config.disableIfOnlineMode) return;
         if (!Config.requireLogin) return;
         Player p = e.getPlayer();
-        Bukkit.dispatchCommand(p.getName(), "mchatdisable");
+        Bukkit.dispatchCommand(p, "mchatdisable");
         AuthPlayer ap = AuthPlayer.getAuthPlayer(p);
         ap.setLastJoinTimestamp(System.currentTimeMillis());
         if (Config.sessionsEnabled && ap.isWithinSession()) {
             plugin.getLogger().info(p.getName() + " was logged in via session.");
             p.sendMessage(ChatColor.BLUE + "You have been logged in via session.");
-            Bukkit.dispatchCommand(p.getName(), "mchatenable");
+            Bukkit.dispatchCommand(p, "mchatenable");
             ap.enableAfterLoginGodmode();
             ap.setLoggedIn(true);
             return;
